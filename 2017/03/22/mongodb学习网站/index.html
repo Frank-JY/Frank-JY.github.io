@@ -29,7 +29,7 @@
 
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="学习网站," />
 
 
 
@@ -38,25 +38,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="第二章 Java内存区域与内存溢出异常标签（空格分隔）： Java虚拟机
+<meta name="description" content="mogodb学习网站
+标签（空格分隔）： mongodb
 
-2.2
-运行时数据区域：  1、程序计数器：线程私有，不会抛OutOfMemoryError  2、Java虚拟机栈：线程私有，每个方法执行时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间完全确定">
+1、MongoDB官网 ： http://www.mongodb.org2、MongoDB国内官方网站：http://www.mongoing.com3、中文MongoDB文档地址：http://docs.monging.com4、MongoDB的github：https://github.com/mongodb5、MongoDB的bug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java内存区域与内存溢出异常">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/03/21/第二章 Java内存区域与内存溢出异常/index.html">
+<meta property="og:title" content="MongoDB学习网站">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/03/22/mongodb学习网站/index.html">
 <meta property="og:site_name" content="JY-Blog">
-<meta property="og:description" content="第二章 Java内存区域与内存溢出异常标签（空格分隔）： Java虚拟机
+<meta property="og:description" content="mogodb学习网站
+标签（空格分隔）： mongodb
 
-2.2
-运行时数据区域：  1、程序计数器：线程私有，不会抛OutOfMemoryError  2、Java虚拟机栈：线程私有，每个方法执行时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间完全确定">
-<meta property="og:updated_time" content="2017-03-22T11:55:49.320Z">
+1、MongoDB官网 ： http://www.mongodb.org2、MongoDB国内官方网站：http://www.mongoing.com3、中文MongoDB文档地址：http://docs.monging.com4、MongoDB的github：https://github.com/mongodb5、MongoDB的bug">
+<meta property="og:updated_time" content="2017-03-22T12:03:26.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java内存区域与内存溢出异常">
-<meta name="twitter:description" content="第二章 Java内存区域与内存溢出异常标签（空格分隔）： Java虚拟机
+<meta name="twitter:title" content="MongoDB学习网站">
+<meta name="twitter:description" content="mogodb学习网站
+标签（空格分隔）： mongodb
 
-2.2
-运行时数据区域：  1、程序计数器：线程私有，不会抛OutOfMemoryError  2、Java虚拟机栈：线程私有，每个方法执行时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间完全确定">
+1、MongoDB官网 ： http://www.mongodb.org2、MongoDB国内官方网站：http://www.mongoing.com3、中文MongoDB文档地址：http://docs.monging.com4、MongoDB的github：https://github.com/mongodb5、MongoDB的bug">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
   };
 </script>
 
-  <title> Java内存区域与内存溢出异常 | JY-Blog </title>
+  <title> MongoDB学习网站 | JY-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -316,7 +316,7 @@
           
           
             
-              Java内存区域与内存溢出异常
+              MongoDB学习网站
             
           
         </h1>
@@ -325,8 +325,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-03-21T23:22:29+08:00" content="2017-03-21">
-            2017-03-21
+          <time itemprop="dateCreated" datetime="2017-03-22T20:03:11+08:00" content="2017-03-22">
+            2017-03-22
           </time>
         </span>
 
@@ -335,8 +335,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JVM/" itemprop="url" rel="index">
-                  <span itemprop="name">JVM</span>
+                <a href="/categories/MongoDB/" itemprop="url" rel="index">
+                  <span itemprop="name">MongoDB</span>
                 </a>
               </span>
 
@@ -359,17 +359,10 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="第二章-Java内存区域与内存溢出异常"><a href="#第二章-Java内存区域与内存溢出异常" class="headerlink" title="第二章 Java内存区域与内存溢出异常"></a>第二章 Java内存区域与内存溢出异常</h1><p>标签（空格分隔）： Java虚拟机</p>
+        <span itemprop="articleBody"><p>mogodb学习网站</p>
+<p>标签（空格分隔）： mongodb</p>
 <hr>
-<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><ul>
-<li>运行时数据区域：<br>  1、程序计数器：<br>线程私有，不会抛OutOfMemoryError<br>  2、Java虚拟机栈：<br>线程私有，每个方法执行时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间完全确定的，在方法运行期间不会改变局部变量表的大小。<br>  3、本地方法栈：<br>虚拟机栈为执行Java方法（也就是字节码）服务，而本地方法栈则为虚拟机使用到的Native方法服务。<br>  4、Java堆：<br>是java虚拟机所管理的内存中最大的一块。Java堆是垃圾收集器管理的主要区域，也被称为“GC堆”。Java堆中还细分为：新生代和老年代;再细致一点有Eden空间、From Survivor空间、To Suvivor空间等。<br>  5、方法区：<br>用于存储已被虚拟机加载的类信息、常量、静态常量、即时编译器编译后的代码等数据。很多人愿意把方法区称为“永久代”。在目前的JDK1.7的HotSpot中，已经把原本放在永久代的字符串常量池。这区域的内存回收目标主要是针对常量池的回收和对类型的卸载。</li>
-</ul>
-<h2 id="2-3对象的探秘"><a href="#2-3对象的探秘" class="headerlink" title="2.3对象的探秘"></a>2.3对象的探秘</h2><ul>
-<li>对象的创建：虚拟机遇到一条new指令时，首先将去检查这个指令的参数是否能在常量池中定位到一个符号引用，并且检查这个符号引用代表的类是否已被加载、解析和初始化过。如果没有，那必须先执行相应的类加载过程。在类加载完成后，接下来虚拟机将为新生对象分配内存。</li>
-<li>内存分配方式：<br>  1、指针碰撞。<br>  2、空闲列表。</li>
-<li>对象的内存布局：<br>  对象在内存中存储的布局可以分为3块区域：<br>  1、对象头（Header）：第一部分用于存储对象自身的运行时数据。另一部分是类型指针。<br>  2、实例数据（Instance Data)：存储对象真正存储的有效信息。<br>  3、对齐填充（Padding）：仅仅起着占位符的作用。</li>
-<li>对象的访问定位：<br>  Java程序需要通过栈上的reference数据来操作堆上的具体对象。目前主流的访问方式有使用句柄和直接指针两种。</li>
-</ul>
+<p>1、MongoDB官网 ： <a href="http://www.mongodb.org" target="_blank" rel="external">http://www.mongodb.org</a><br>2、MongoDB国内官方网站：<a href="http://www.mongoing.com" target="_blank" rel="external">http://www.mongoing.com</a><br>3、中文MongoDB文档地址：<a href="http://docs.monging.com" target="_blank" rel="external">http://docs.monging.com</a><br>4、MongoDB的github：<a href="https://github.com/mongodb" target="_blank" rel="external">https://github.com/mongodb</a><br>5、MongoDB的bug提交：<a href="https://jira.mongodb.org/" target="_blank" rel="external">https://jira.mongodb.org/</a><br>6、两个google groups：<a href="http://mongodb-user与http://mongo-cn" target="_blank" rel="external">http://mongodb-user与http://mongo-cn</a></p>
 </span>
       
     </div>
@@ -378,7 +371,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag">#随笔</a>
+            <a href="/tags/学习网站/" rel="tag">#学习网站</a>
           
         </div>
       
@@ -387,13 +380,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/Maven/" rel="prev">Maven学习记录</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/21/hello-world/" rel="next">Hello World</a>
+              <a href="/2017/03/22/Maven/" rel="next">Maven学习记录</a>
             
           </div>
         </div>
@@ -643,7 +634,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-Java内存区域与内存溢出异常"><span class="nav-number">1.</span> <span class="nav-text">第二章 Java内存区域与内存溢出异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2"><span class="nav-number">1.1.</span> <span class="nav-text">2.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3对象的探秘"><span class="nav-number">1.2.</span> <span class="nav-text">2.3对象的探秘</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

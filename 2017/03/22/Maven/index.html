@@ -1,0 +1,972 @@
+
+<!doctype html>
+<html class="theme-next use-motion theme-next-mala">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="my blog" />
+
+
+
+  <meta name="keywords" content="随笔," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="Mavenmaven和ant的比较 第一：每次和别人说maven的时候，很多会认为是全新的东西而不肯放弃ant。其实，ant脚本是可以直接运行在maven中的。
+如果要说maven和ant有什么差别，我觉得最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven学习记录">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/03/22/Maven/index.html">
+<meta property="og:site_name" content="JY-Blog">
+<meta property="og:description" content="Mavenmaven和ant的比较 第一：每次和别人说maven的时候，很多会认为是全新的东西而不肯放弃ant。其实，ant脚本是可以直接运行在maven中的。
+如果要说maven和ant有什么差别，我觉得最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完">
+<meta property="og:updated_time" content="2017-03-22T11:44:25.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven学习记录">
+<meta name="twitter:description" content="Mavenmaven和ant的比较 第一：每次和别人说maven的时候，很多会认为是全新的东西而不肯放弃ant。其实，ant脚本是可以直接运行在maven中的。
+如果要说maven和ant有什么差别，我觉得最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mala',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Maven学习记录 | JY-Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    
+      
+
+      
+        <style type="text/css">
+
+    .circle {
+        width: 40px;
+        height: 40px;
+        background: #555 no-repeat;
+        cursor: move;
+    }
+
+    .assist-btn {
+        position: fixed;
+        top: 50％;
+        left: 10px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        color: #87daff;
+    }
+
+</style>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript">
+    // 浮动圆点展开与收缩
+    /*
+    $(function () {
+        var assist_box = $('.assist-box');
+        $('#assist_btn').hover(function () {
+            assist_box.stop().show(300);
+        }, function () {
+            assist_box.stop().hide(150);
+        })
+    });
+    */  
+    //浮动圆点拖动
+    $(function () {
+        var box = document.getElementById('assist_btn');
+        box.onmousedown = function (event) {
+            var e = event || window.event,
+                t = e.target || e.srcElement,
+                // 鼠标按下时的坐标x1,y1
+                x1 = e.clientX,
+                y1 = e.clientY,
+                //鼠标按下时的左右偏移量
+                dragLeft = this.offsetLeft,
+                dragTop = this.offsetTop;
+
+            document.onmousemove = function (event) {
+                var e = event || window.event,
+                    t = e.target || e.srcElement,
+                    // 鼠标移动时的动态坐标
+                    x2 = e.clientX,
+                    y2 = e.clientY,
+                    // 鼠标移动时的坐标的变化量
+                    x = x2 - x1,
+                    y = y2 - y1;
+                box.style.left = (dragLeft + x) + 'px';
+                box.style.top = (dragTop + y) + 'px';
+            }
+
+            document.onmouseup = function () {
+                this.onmousemove = null;
+            }
+        }
+    });
+
+/*
+    $whitesmoke   = #f5f5f5
+    $gainsboro    = #eee
+    $gray-lighter = #ddd
+    $grey-light   = #ccc
+    $grey         = #bbb
+    $grey-dark    = #999
+    $grey-dim     = #666
+    $black-light  = #555
+    $black-deep   = #222
+    $red          = #ff2a2a
+    $blue-bright  = #87daff
+    $blue         = #0684bd
+    $blue-deep    = #262a30
+*/
+    // white theme
+    var body = {color: "#555", background: "white"};
+    var a_tag = {color: "#222"};
+    var header = { background: "#f5f5f5"};
+    var logo_line_i = {background: "#222"};
+    // var post_code = {background: "#eee", color: "#222"};
+
+    function switch_theme() {
+        $("body").css(body);
+        $("a:not('.links-of-author-item a, .site-state-item a, .site-state-posts a, .feed-link a, .motion-element a, .post-tags a, .show-commit-cls a, #donate_board a')").css(a_tag);
+        $(".header, .footer").css(header);
+        $(".logo-line-before i, .logo-line-after i").css(logo_line_i);
+        //$(".post code").css(post_code);
+        $("#idhyt-surprise-ball #idhyt-surprise-ball-animation .drag").css(a_tag);
+        $(".post-title-link, .posts-expand .post-meta, .post-comments-count, .disqus-comment-count, .post-category a, .post-nav-next a, .post-nav-item a").css(a_tag);
+        
+        // $("code").css({color: '#c5c8c6', background: '#1d1f21'});
+        $("#assist_btn").hide(1500);
+    }
+
+    $(function () {
+        $("#assist_btn").dblclick(function() {
+            switch_theme();
+        });
+    });
+
+</script>
+
+<div>
+
+    <button class="assist-btn circle" id="assist_btn" title="双击切换">
+        亮
+    </button>
+
+</div>
+
+
+
+
+
+
+
+
+
+      
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Maven学习记录
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-03-22T18:45:29+08:00" content="2017-03-22">
+            2017-03-22
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Maven/" itemprop="url" rel="index">
+                  <span itemprop="name">Maven</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="maven和ant的比较"><a href="#maven和ant的比较" class="headerlink" title="maven和ant的比较"></a>maven和ant的比较</h2><p> 第一：每次和别人说maven的时候，很多会认为是全新的东西而不肯放弃ant。其实，ant脚本是可以直接运行在maven中的。</p>
+<p>如果要说maven和ant有什么差别，我觉得最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完全是自己定义，显然maven更胜一筹。</p>
+<p>第二：Maven对所依赖的包有明确的定义，如使用那个包，版本是多少，一目了然。而ant则通常是简单的inclde 所有的jar。导致的最终结果就是，你根本无法确定JBoss中的lib下的common－logging 是哪个版本的，唯一的方法就是打开 META－INF 目录下MANIFEST.MF。估计JBoss迟早会转向Maven的。</p>
+<p><strong>第三：Maven是基于中央仓库的编译，即把编译所需要的资源放在一个中央仓库里，如jar，tld，pom，等。当编译的时候，maven会自动在仓库中找到相应的包，如果本地仓库没有，则从设定好的远程仓库中下载到本地。这一切都是自动的，而ant需要自己定义了。这个好处导致的结果就是，用maven编译的项目在发布的时候只需要发布源码，小得很，而反之，ant的发布则要把所有的包一起发布，显然maven又胜了一筹。</strong></p>
+<p>第四：maven有大量的重用脚本可以利用，如生成网站，生成javadoc，sourcecode reference，等。而ant都需要自己去写。试试 maven site 的效果。</p>
+<p>第五：maven目前不足的地方就是没有象ant那样成熟的GUI界面，不过mavengui正在努力中。目前使用maven最好的方法还是命令行，又快又方便。</p>
+<h2 id="mvn指令"><a href="#mvn指令" class="headerlink" title="mvn指令"></a><strong>mvn指令</strong></h2><p>mvn compile　　　　　编译项目<br>mvn test 　　　　　　单元测试<br>mvn clean　　　　　　清空<br>mvn package 　　　　项目打包（jar包）<br>mvn install　　　　　安装到本地仓库<br>mvn deploy　　　　　部署到远程仓库<br>mvn archetype<br>mvn archetype : generate　　创建项目骨架<br>仓库———-&gt;hasee-&gt;.m2</p>
+<p>2、maven-&gt;conf-&gt;settings.xml中配置“仓库”地址<br>3、Maven-&gt;lib-&gt;maven-model-builder-3.2.1.jar可设置中央工厂自动下载jar包</p>
+<p><strong>groupId</strong>：所述的项目名称，由于有的项目并不是一个jar包构成的，而是由很多的jar包组成的。因此这个groupId就是整个项目的名称。</p>
+<p><strong>artifactId</strong>：包的名称。</p>
+<p><strong>version</strong>：版本号。<br><strong>packaging</strong>：包的类型，一般都是jar，也可以是war、pom之类的。如果不填，默认就是jar。<br>name和url，一个是名称，一个是maven的地址。主要就是上面的几个参数。 </p>
+<p>#依赖</p>
+<h2 id="1、依赖元素"><a href="#1、依赖元素" class="headerlink" title="1、依赖元素"></a>1、依赖元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;  </div><div class="line">        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.5&lt;/version&gt;</div><div class="line">        &lt;scope&gt;compile&lt;/scope&gt;  </div><div class="line">    &lt;/dependency&gt;  </div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<h2 id="2、依赖范围"><a href="#2、依赖范围" class="headerlink" title="2、依赖范围"></a>2、依赖范围</h2><ul>
+<li>maven项目又三种classpath（编译，测试，运行） <h3 id="scope用来表示与classpath的关系，总共有五种"><a href="#scope用来表示与classpath的关系，总共有五种" class="headerlink" title="scope用来表示与classpath的关系，总共有五种"></a>scope用来表示与classpath的关系，总共有五种</h3></li>
+<li><strong>compile</strong>:编译，测试，运行，打包，能传递（默认）</li>
+<li><strong>test</strong>:测试（编译，打包不依赖）不能传递</li>
+<li><strong>provided</strong>:编译，测试（打包不依赖）如：servlet-api,因为tomcat等web服务器已经存在servlet-api了，如果再打包会发生冲突  </li>
+<li><strong>runtime</strong>:测试，运行（编译不依赖）</li>
+<li><strong>system</strong>:编译，测试，同provided，但必须指定systemPath，慎用<br><br><br>####<strong>当依赖级别相同时，先看哪一个先定义就依赖哪一个</strong><br>####<strong>当依赖级别不用时，依赖间接短的优先依赖</strong></li>
+</ul>
+<h2 id="3、排除依赖（包冲突）"><a href="#3、排除依赖（包冲突）" class="headerlink" title="3、排除依赖（包冲突）"></a>3、排除依赖（包冲突）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;  </div><div class="line">    &lt;groupId&gt;javax.mail&lt;/groupId&gt;  </div><div class="line">    &lt;artifactId&gt;mail&lt;/artifactId&gt;  </div><div class="line">    &lt;version&gt;1.4.1&lt;/version&gt;  </div><div class="line">    &lt;exclusions&gt;  </div><div class="line">        &lt;exclusion&gt;  </div><div class="line">            &lt;groupId&gt;javax.activation&lt;/groupId&gt;  </div><div class="line">            &lt;artifactId&gt;activation&lt;/artifactId&gt;  </div><div class="line">        &lt;/exclusion&gt;  </div><div class="line">    &lt;/exclusions&gt;  </div><div class="line">&lt;/dependency&gt;  </div><div class="line">&lt;dependency&gt;  </div><div class="line">    &lt;groupId&gt;javax.activation&lt;/groupId&gt;  </div><div class="line">    &lt;artifactId&gt;activation&lt;/artifactId&gt;  </div><div class="line">    &lt;version&gt;1.1&lt;/version&gt;  </div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h1 id="模块管理-聚合）"><a href="#模块管理-聚合）" class="headerlink" title="模块管理(聚合）"></a>模块管理(聚合）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--导入了三个模块，把这三个模块聚合在一起--&gt;</div><div class="line">&lt;modules&gt;</div><div class="line">    &lt;!--聚合是模块的位置--&gt;</div><div class="line">    &lt;module&gt;&lt;/module&gt;</div><div class="line">    &lt;module&gt;&lt;/module&gt;</div><div class="line">    &lt;module&gt;&lt;/module&gt;</div><div class="line">&lt;/modules&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;project&gt;</div><div class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">	&lt;groupId&gt;com.juvenxu.mvnbook.account&lt;/groupId&gt;</div><div class="line">	&lt;artifactId&gt;account-aggregator&lt;/artifactId&gt;</div><div class="line">	&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</div><div class="line">	&lt;packaging&gt; pom &lt;/packaging&gt;</div><div class="line">	&lt;name&gt;Account Aggregator&lt;/name&gt;</div><div class="line">	 &lt;modules&gt;</div><div class="line">		&lt;module&gt;account-email&lt;/module&gt;</div><div class="line">		&lt;module&gt;account-persist&lt;/module&gt;</div><div class="line">	 &lt;/modules&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>父模块POM如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;project&gt;  </div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  </div><div class="line">    &lt;groupId&gt;com.juvenxu.mvnbook.account&lt;/groupId&gt;  </div><div class="line">    &lt;artifactId&gt; account-parent &lt;/artifactId&gt;  </div><div class="line">    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;  </div><div class="line">    &lt;packaging&gt;pom&lt;/packaging&gt;  </div><div class="line">    &lt;name&gt;Account Parent&lt;/name&gt;  </div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+<p>子模块POM如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;project&gt;</div><div class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">	</div><div class="line">	&lt; parent &gt;</div><div class="line">		&lt;groupId&gt;com.juvenxu.mvnbook.account&lt;/groupId&gt;</div><div class="line">		&lt;artifactId&gt; account-parent &lt;/artifactId&gt;</div><div class="line">		&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</div><div class="line">		&lt; relativePath &gt;../account-parent/pom.xml&lt;/ relativePath&gt;</div><div class="line">	&lt;/ parent &gt;</div><div class="line">	</div><div class="line">	&lt;artifactId&gt; account-email &lt;/artifactId&gt;</div><div class="line">	&lt;name&gt;Account Email&lt;/name&gt;</div><div class="line">  ...</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;dependencyManagement&gt;</div><div class="line">&lt;/dependencyManageMent&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;pulginManagement&gt;</div><div class="line">&lt;/pulginManageMent&gt;</div></pre></td></tr></table></figure>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a><strong>clean</strong></h2><ul>
+<li>pre-clean</li>
+<li>clean </li>
+<li>post-clean</li>
+</ul>
+<h2 id="compile-default"><a href="#compile-default" class="headerlink" title="compile(default)"></a><strong>compile(default)</strong></h2><ul>
+<li><p>validate</p>
+</li>
+<li><p>generate-sources</p>
+</li>
+<li>process-sources</li>
+<li>generate-resources</li>
+<li>process-resources       复制并处理资源文件，至目标目录，准备打包。</li>
+<li>compile     编译项目的源代码。</li>
+<li>process-classes</li>
+<li>generate-test-sources </li>
+<li>process-test-sources </li>
+<li>generate-test-resources</li>
+<li>process-test-resources     复制并处理资源文件，至目标测试目录。</li>
+<li>test-compile     编译测试源代码。</li>
+<li>process-test-classes</li>
+<li>test     使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。</li>
+<li>prepare-package</li>
+<li>package     接受编译好的代码，打包成可发布的格式，如 JAR 。</li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>post-integration-test</li>
+<li>verify</li>
+<li>install     将包安装至本地仓库，以让其它项目依赖。</li>
+<li>deploy     将最终的包复制到远程的仓库，以让其它开发人员与项目共享。</li>
+</ul>
+<h2 id="site"><a href="#site" class="headerlink" title="site"></a><strong>site</strong></h2><ul>
+<li>pre-site     执行一些需要在生成站点文档之前完成的工作</li>
+<li>site    生成项目的站点文档</li>
+<li>post-site     执行一些需要在生成站点文档之后完成的工作，并且为部署做准备</li>
+<li>site-deploy     将生成的站点文档部署到特定的服务器上<br><br><br><br></li>
+</ul>
+<h1 id="Maven插件和目标"><a href="#Maven插件和目标" class="headerlink" title="Maven插件和目标"></a>Maven插件和目标</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">  	&lt;pluginManagement&gt;</div><div class="line">  		&lt;plugins&gt;</div><div class="line">      &lt;plugin&gt;</div><div class="line">        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;3.5.1&lt;/version&gt;</div><div class="line">        &lt;configuration&gt;</div><div class="line">          &lt;source&gt;1.7&lt;/source&gt;</div><div class="line">          &lt;target&gt;1.7&lt;/target&gt;</div><div class="line">        &lt;/configuration&gt;</div><div class="line">      &lt;/plugin&gt;</div><div class="line">    &lt;/plugins&gt;</div><div class="line">  	&lt;/pluginManagement&gt;</div><div class="line">  &lt;/build&gt;</div></pre></td></tr></table></figure>
+<p><strong>使用execution标签配置目标和执行时间，phase配置运行阶段，goal配置目标</strong><br><strong>对于有继承关系的项目来说，父类pom.xml应如上配置，而子类也应加上下面的代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;plugins&gt;</div><div class="line">        &lt;plugin&gt;</div><div class="line">            &lt;groupId&gt;&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;&lt;/artifactId&gt;</div><div class="line">        &lt;plugin&gt;</div><div class="line">    &lt;/plugins&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>配置jdk版本的插件代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;  </div><div class="line">      &lt;plugins&gt;  </div><div class="line">        &lt;plugin&gt;  </div><div class="line">            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;  </div><div class="line">            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;  </div><div class="line">            &lt;version&gt;2.3.2&lt;/version&gt;  </div><div class="line">            &lt;configuration&gt;  </div><div class="line">                &lt;source&gt;1.6&lt;/source&gt;  </div><div class="line">                &lt;target&gt;1.6&lt;/target&gt;  </div><div class="line">            &lt;/configuration&gt;  </div><div class="line">        &lt;/plugin&gt;  </div><div class="line">      &lt;/plugins&gt;  </div><div class="line">    &lt;/build&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h1><ul>
+<li>本地仓库</li>
+<li>私有仓库　　neuxs</li>
+<li>中央仓库</li>
+</ul>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>默认情况下只会测试：</p>
+<ul>
+<li>Test**</li>
+<li>**Test</li>
+<li>**TestCase</li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag">#随笔</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/mongodb学习网站/" rel="prev">MongoDB学习网站</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/21/第二章 Java内存区域与内存溢出异常/" rel="next">Java内存区域与内存溢出异常</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div>
+      
+        <style type="text/css">
+
+    .donate_bar {
+        text-align: center;
+        margin-top : 5%;
+    }
+
+    .donate_bar.hidden {
+        display:none;
+    }
+/*
+    .donate_bar a.btn_donate {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        margin-left:auto;
+        margin-right:auto;
+
+        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+        _background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat; 
+
+        -webkit-transition: background 0s;
+        -moz-transition: background 0s;
+        -o-transition: background 0s;
+        -ms-transition: background 0s;
+        transition: background 0s;
+    }
+*/
+    .donate_bar a.btn_donate:hover { 
+        // background-position: 0px -82px;
+        color: #87daff
+    }
+
+    .donate_bar .donate_txt {
+        display: block;
+        color: #9d9d9d;
+        font: 14px/2 "Microsoft Yahei";
+    }
+
+    .bold { 
+        font-weight: bold; 
+    }
+
+    .post-donate a {
+        border-bottom: 0px;
+    }
+
+    #donate_guide table {
+        border: none;
+    }
+
+    #donate_guide td {
+        border-bottom: none;
+        border-right: none;
+        background: #333333;
+        valign: top;
+    }
+
+</style>
+
+
+
+    
+
+    <div class ="post-donate">
+        <div id="donate_board" class="donate_bar center">
+              <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">赏</a>
+              <span id="donate_txt" class="donate_txt">
+                   
+                        仅仅是一个功能
+                   
+              </span>
+            <br>
+        </div>  
+  
+        <div id="donate_guide" class="donate_bar center hidden">
+            <!--
+            
+                <a href="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                    style="float:left;margin-left:25%;margin-right:10px;">
+                    <img src="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="" height="164px" width="164px">
+                </a> 
+              
+
+            
+                <a href="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                    style="margin-right:30%">
+                    <img src="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="" height="164px" width="164px">
+                </a>
+            
+            -->
+            <table>
+                <tr>
+                    <td>
+                        
+                            <a href="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                                style="float:left;margin-left:25%;margin-right:10px;">
+                                <img src="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="" height="164px" width="164px">
+                            </a> 
+                         
+                    </td>
+                    <td>
+                        
+                            <a href="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                                style="margin-right:30%">
+                                <img src="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="" height="164px" width="164px">
+                            </a>
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+                $('#donate_board').addClass('hidden');
+                // $('#donate_guide').removeClass('hidden');
+                $('#donate_guide').show(2000);
+            }
+
+        </script>
+    </div>
+
+    
+
+
+      
+    </div>
+
+    <div class="post-spread">
+      
+        <div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+</div>
+<script>
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Frank-JY" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Frank-JY</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">my blog</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        <div class="links-of-friendly motion-element">
+          
+        </div>
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven"><span class="nav-number">1.</span> <span class="nav-text">Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#maven和ant的比较"><span class="nav-number">1.1.</span> <span class="nav-text">maven和ant的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mvn指令"><span class="nav-number">1.2.</span> <span class="nav-text">mvn指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、依赖元素"><span class="nav-number">1.3.</span> <span class="nav-text">1、依赖元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、依赖范围"><span class="nav-number">1.4.</span> <span class="nav-text">2、依赖范围</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scope用来表示与classpath的关系，总共有五种"><span class="nav-number">1.4.1.</span> <span class="nav-text">scope用来表示与classpath的关系，总共有五种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、排除依赖（包冲突）"><span class="nav-number">1.5.</span> <span class="nav-text">3、排除依赖（包冲突）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块管理-聚合）"><span class="nav-number">2.</span> <span class="nav-text">模块管理(聚合）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖管理"><span class="nav-number">4.</span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">5.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#clean"><span class="nav-number">5.1.</span> <span class="nav-text">clean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compile-default"><span class="nav-number">5.2.</span> <span class="nav-text">compile(default)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#site"><span class="nav-number">5.3.</span> <span class="nav-text">site</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven插件和目标"><span class="nav-number">6.</span> <span class="nav-text">Maven插件和目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库"><span class="nav-number">7.</span> <span class="nav-text">仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">8.</span> <span class="nav-text">测试</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2017
+  </span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Frank-JY
+  </span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">Mala</a>
+</div>
+
+<!-- busuanzi -->
+
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

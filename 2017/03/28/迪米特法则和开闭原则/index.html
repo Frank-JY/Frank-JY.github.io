@@ -29,7 +29,7 @@
 
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="设计模式,六大原则," />
 
 
 
@@ -38,52 +38,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="jdk检测工具标签（空格分隔）： java工具
+<meta name="description" content="迪米特法则和开闭原则标签（空格分隔）： 设计模式
 
-Java开发必须掌握的线上问题排查命令我们需要借助一些常用命令来查看运行时的具体情况，这些运行时信息包括但不限于运行日志、异常堆栈、堆使用情况、GC情况、JVM参数情况、线程情况等。
-jps
-功能
-
-显示当前所有java进程pid的命令。
-
-常用指令
-
-jps：显示当前用户的所有java进程的PID
-jps -v 3331：显示虚拟机参数
-jps">
+迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”定义：一个对象应该对其他对象有最少的了解
+规范：
+类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象
+尽量不要对外公布太多的public方法和非静态的public变量，尽量内敛，多使用private、package-private、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdk分析工具">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/03/23/jdk检测工具/index.html">
+<meta property="og:title" content="迪米特法则和开闭原则">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/03/28/迪米特法则和开闭原则/index.html">
 <meta property="og:site_name" content="JY-Blog">
-<meta property="og:description" content="jdk检测工具标签（空格分隔）： java工具
+<meta property="og:description" content="迪米特法则和开闭原则标签（空格分隔）： 设计模式
 
-Java开发必须掌握的线上问题排查命令我们需要借助一些常用命令来查看运行时的具体情况，这些运行时信息包括但不限于运行日志、异常堆栈、堆使用情况、GC情况、JVM参数情况、线程情况等。
-jps
-功能
-
-显示当前所有java进程pid的命令。
-
-常用指令
-
-jps：显示当前用户的所有java进程的PID
-jps -v 3331：显示虚拟机参数
-jps">
-<meta property="og:updated_time" content="2017-03-22T17:20:57.116Z">
+迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”定义：一个对象应该对其他对象有最少的了解
+规范：
+类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象
+尽量不要对外公布太多的public方法和非静态的public变量，尽量内敛，多使用private、package-private、">
+<meta property="og:updated_time" content="2017-03-27T16:54:19.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jdk分析工具">
-<meta name="twitter:description" content="jdk检测工具标签（空格分隔）： java工具
+<meta name="twitter:title" content="迪米特法则和开闭原则">
+<meta name="twitter:description" content="迪米特法则和开闭原则标签（空格分隔）： 设计模式
 
-Java开发必须掌握的线上问题排查命令我们需要借助一些常用命令来查看运行时的具体情况，这些运行时信息包括但不限于运行日志、异常堆栈、堆使用情况、GC情况、JVM参数情况、线程情况等。
-jps
-功能
-
-显示当前所有java进程pid的命令。
-
-常用指令
-
-jps：显示当前用户的所有java进程的PID
-jps -v 3331：显示虚拟机参数
-jps">
+迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”定义：一个对象应该对其他对象有最少的了解
+规范：
+类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象
+尽量不要对外公布太多的public方法和非静态的public变量，尽量内敛，多使用private、package-private、">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -93,7 +72,7 @@ jps">
   };
 </script>
 
-  <title> jdk分析工具 | JY-Blog </title>
+  <title> 迪米特法则和开闭原则 | JY-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -343,7 +322,7 @@ jps">
           
           
             
-              jdk分析工具
+              迪米特法则和开闭原则
             
           
         </h1>
@@ -352,8 +331,8 @@ jps">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-03-23T01:11:29+08:00" content="2017-03-23">
-            2017-03-23
+          <time itemprop="dateCreated" datetime="2017-03-28T00:11:29+08:00" content="2017-03-28">
+            2017-03-28
           </time>
         </span>
 
@@ -362,8 +341,8 @@ jps">
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/java工具/" itemprop="url" rel="index">
-                  <span itemprop="name">java工具</span>
+                <a href="/categories/设计模式/" itemprop="url" rel="index">
+                  <span itemprop="name">设计模式</span>
                 </a>
               </span>
 
@@ -386,83 +365,29 @@ jps">
       
 
       
-        <span itemprop="articleBody"><h1 id="jdk检测工具"><a href="#jdk检测工具" class="headerlink" title="jdk检测工具"></a>jdk检测工具</h1><p>标签（空格分隔）： java工具</p>
+        <span itemprop="articleBody"><h1 id="迪米特法则和开闭原则"><a href="#迪米特法则和开闭原则" class="headerlink" title="迪米特法则和开闭原则"></a>迪米特法则和开闭原则</h1><p>标签（空格分隔）： 设计模式</p>
 <hr>
-<h2 id="Java开发必须掌握的线上问题排查命令"><a href="#Java开发必须掌握的线上问题排查命令" class="headerlink" title="Java开发必须掌握的线上问题排查命令"></a>Java开发必须掌握的线上问题排查命令</h2><p><strong>我们需要借助一些常用命令来查看运行时的具体情况，这些运行时信息包括但不限于运行日志、异常堆栈、堆使用情况、GC情况、JVM参数情况、线程情况等。</strong></p>
-<h1 id="jps"><a href="#jps" class="headerlink" title="jps"></a>jps</h1><ul>
-<li>功能</li>
+<h2 id="迪米特法则（Law-od-Demeter-LoD）-也称为“最少知识原则”"><a href="#迪米特法则（Law-od-Demeter-LoD）-也称为“最少知识原则”" class="headerlink" title="迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”"></a>迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”</h2><h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p><strong>一个对象应该对其他对象有最少的了解</strong></p>
+<h3 id="规范："><a href="#规范：" class="headerlink" title="规范："></a>规范：</h3><ul>
+<li>类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象</li>
+<li>尽量不要对外公布太多的public方法和非静态的public变量，尽量内敛，多使用private、package-private、protected等访问权限</li>
+<li>如果一个方法放在本类中，既不增加类间关系，也对本类不产生负面影响，那就放置在本类中。</li>
+<li>谨慎使用Serializable<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>迪米特法则的核心观念就是类间解耦，弱解耦，只有弱解耦了以后，类的复用率才可以提高。其要求的结果就是产生了大量的中转或跳转类，导致系统的复杂性提高，同时也为维护提高了难度。<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3></li>
+<li>体育委员点名事件</li>
+<li>安装导向</li>
 </ul>
-<p>显示当前所有java进程pid的命令。</p>
-<ul>
-<li>常用指令</li>
+<h2 id="开闭原则-Open-Closed-Principle"><a href="#开闭原则-Open-Closed-Principle" class="headerlink" title="开闭原则(Open Closed Principle)"></a>开闭原则(Open Closed Principle)</h2><h3 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h3><p><strong>一个软件实体如类、模块和函数应该对扩展开放，对修改关闭</strong></p>
+<h3 id="规范：-1"><a href="#规范：-1" class="headerlink" title="规范："></a>规范：</h3><ul>
+<li>开闭原则对外扩展开放，对修改关闭，并不意味着不做任何修改，底层模块的变更，必然要有高层模块进行耦合，否则就是一个孤立无意义的代码片段。<h3 id="为什么要采用开闭模式："><a href="#为什么要采用开闭模式：" class="headerlink" title="为什么要采用开闭模式："></a>为什么要采用开闭模式：</h3></li>
+<li>开闭原则对测试的影响</li>
+<li>开闭原则可以提高复用性</li>
+<li>开闭原则可以提高可维护性</li>
+<li>面向对象开发的要求<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>开闭原则是最基础的原则</li>
+<li>约定优于配置<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3></li>
+<li>书店售书</li>
 </ul>
-<p><code>jps</code>：显示当前用户的所有java进程的PID</p>
-<p><code>jps -v 3331</code>：显示虚拟机参数</p>
-<p><code>jps -m 3331</code>：显示传递给main()函数的参数</p>
-<p><code>jps -l 3331</code>：显示主类的全路径</p>
-<h1 id="jinfo"><a href="#jinfo" class="headerlink" title="jinfo"></a>jinfo</h1><ul>
-<li>功能</li>
-</ul>
-<p>实时查看和调整虚拟机参数，可以显示未被显示指定的参数的默认值（jps -v 则不能）。</p>
-<ul>
-<li><p>[x] jdk8中已经不支持该命令。</p>
-</li>
-<li><p>常用指令</p>
-</li>
-</ul>
-<p><code>jinfo -flag CMSIniniatingOccupancyFration 1444</code>：查询CMSIniniatingOccupancyFration参数值</p>
-<h1 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h1><ul>
-<li>功能</li>
-</ul>
-<p>显示进程中的类装载、内存、垃圾收集、JIT编译等运行数据。</p>
-<ul>
-<li>常用指令</li>
-</ul>
-<p><code>jstat -gc 3331 250 20</code>：查询进程2764的垃圾收集情况，每250毫秒查询一次，一共查询20次。</p>
-<p><code>jstat -gccause</code>：额外输出上次GC原因</p>
-<p><code>jstat -calss</code>：件事类装载、类卸载、总空间以及所消耗的时间</p>
-<h1 id="jmap"><a href="#jmap" class="headerlink" title="jmap"></a>jmap</h1><ul>
-<li>功能</li>
-</ul>
-<p>生成堆转储快照（heapdump）</p>
-<ul>
-<li>常用指令</li>
-</ul>
-<p><code>jmap -heap 3331</code>：查看java 堆（heap）使用情况</p>
-<p><code>jmap -histo 3331</code>：查看堆内存(histogram)中的对象数量及大小</p>
-<p><code>jmap -histo:live 3331</code>：JVM会先触发gc，然后再统计信息</p>
-<p><code>jmap -dump:format=b,file=heapDump 3331</code>：将内存使用的详细情况输出到文件，之后一般使用其他工具进行分析。</p>
-<h1 id="jhat"><a href="#jhat" class="headerlink" title="jhat"></a>jhat</h1><ul>
-<li>功能</li>
-</ul>
-<p>一般与jmap搭配使用，用来分析jmap生成的堆转储文件。</p>
-<p>由于有很多可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）可以替代，所以很少用。不过在没有可视化工具的机器上也是可用的。</p>
-<ul>
-<li>常用指令</li>
-</ul>
-<p><code>jmap -dump:format=b,file=heapDump 3331</code>+<code>jhat heapDump</code>：解析Java堆转储文件,并启动一个 web server</p>
-<h1 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h1><ul>
-<li>功能</li>
-</ul>
-<p>生成当前时刻的线程快照。</p>
-<ul>
-<li>常用指令</li>
-</ul>
-<p><code>jstack 3331</code>：查看线程情况</p>
-<p><code>jstack -F 3331</code>：正常输出不被响应时，使用该指令</p>
-<p><code>jstack -l 3331</code>：除堆栈外，显示关于锁的附件信息</p>
-<p>#常见问题定位过程</p>
-<p>##频繁GC问题或内存溢出问题</p>
-<p>一、使用<code>jps</code>查看线程ID</p>
-<p>二、使用<code>jstat -gc 3331 250 20</code> 查看gc情况，一般比较关注PERM区的情况，查看GC的增长情况。</p>
-<p>三、使用<code>jstat -gccause</code>：额外输出上次GC原因</p>
-<p>四、使用<code>jmap -dump:format=b,file=heapDump 3331</code>生成堆转储文件</p>
-<p>五、使用jhat或者可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）分析堆情况。</p>
-<p>六、结合代码解决内存溢出或泄露问题。</p>
-<p>##死锁问题</p>
-<p>一、使用1jps1查看线程ID</p>
-<p>二、使用<code>jstack 3331</code>：查看线程情况</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>经常使用适当的虚拟机监控和分析工具可以加快我们分析数据、定位解决问题的速度，但也要知道，工具永远都是知识技能的一层包装，没有什么工具是包治百病的。</p>
 </span>
       
     </div>
@@ -471,7 +396,9 @@ jps">
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
+          
+            <a href="/tags/六大原则/" rel="tag">#六大原则</a>
           
         </div>
       
@@ -480,13 +407,13 @@ jps">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/28/迪米特法则和开闭原则/" rel="prev">迪米特法则和开闭原则</a>
+              <a href="/2017/03/28/依赖倒置原则和接口隔离原则/" rel="prev">依赖倒置原则和接口隔离原则</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/mongodb学习网站/" rel="next">MongoDB学习网站</a>
+              <a href="/2017/03/23/jdk检测工具/" rel="next">jdk分析工具</a>
             
           </div>
         </div>
@@ -736,7 +663,7 @@ jps">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jdk检测工具"><span class="nav-number">1.</span> <span class="nav-text">jdk检测工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java开发必须掌握的线上问题排查命令"><span class="nav-number">1.1.</span> <span class="nav-text">Java开发必须掌握的线上问题排查命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jps"><span class="nav-number">2.</span> <span class="nav-text">jps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jinfo"><span class="nav-number">3.</span> <span class="nav-text">jinfo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jstat"><span class="nav-number">4.</span> <span class="nav-text">jstat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jmap"><span class="nav-number">5.</span> <span class="nav-text">jmap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jhat"><span class="nav-number">6.</span> <span class="nav-text">jhat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jstack"><span class="nav-number">7.</span> <span class="nav-text">jstack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">8.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#迪米特法则和开闭原则"><span class="nav-number">1.</span> <span class="nav-text">迪米特法则和开闭原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#迪米特法则（Law-od-Demeter-LoD）-也称为“最少知识原则”"><span class="nav-number">1.1.</span> <span class="nav-text">迪米特法则（Law od Demeter , LoD）,也称为“最少知识原则”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义："><span class="nav-number">1.1.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规范："><span class="nav-number">1.1.2.</span> <span class="nav-text">规范：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">1.1.3.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.4.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开闭原则-Open-Closed-Principle"><span class="nav-number">1.2.</span> <span class="nav-text">开闭原则(Open Closed Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义：-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规范：-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">规范：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要采用开闭模式："><span class="nav-number">1.2.3.</span> <span class="nav-text">为什么要采用开闭模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结：-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

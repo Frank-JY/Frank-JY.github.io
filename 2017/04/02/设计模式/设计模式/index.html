@@ -29,7 +29,7 @@
 
 
 
-  <meta name="keywords" content="设计模式,六大原则," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -38,43 +38,58 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta name="description" content="设计模式标签（空格分隔）： 设计模式
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
+###第七章：单例模式
 
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
+确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
+饿汉式（优秀）和懒汉式（不安全）
+spring每个Bean就是单例
+
+###第八章：工厂方法模式
+
+定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+工厂模式是典型的解耦框架。
+简单工厂模式（静态工厂)和多工厂
+
+###第九">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单一职责原则和里氏替换原则">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/03/28/单一职责原则和里氏替换原则/index.html">
+<meta property="og:title" content="设计模式">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/04/02/设计模式/设计模式/index.html">
 <meta property="og:site_name" content="JY-Blog">
-<meta property="og:description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta property="og:description" content="设计模式标签（空格分隔）： 设计模式
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
+###第七章：单例模式
 
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
-<meta property="og:updated_time" content="2017-03-27T17:05:47.648Z">
+确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
+饿汉式（优秀）和懒汉式（不安全）
+spring每个Bean就是单例
+
+###第八章：工厂方法模式
+
+定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+工厂模式是典型的解耦框架。
+简单工厂模式（静态工厂)和多工厂
+
+###第九">
+<meta property="og:updated_time" content="2018-03-03T10:21:39.974Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单一职责原则和里氏替换原则">
-<meta name="twitter:description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="设计模式标签（空格分隔）： 设计模式
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
+###第七章：单例模式
 
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
+确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
+饿汉式（优秀）和懒汉式（不安全）
+spring每个Bean就是单例
+
+###第八章：工厂方法模式
+
+定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+工厂模式是典型的解耦框架。
+简单工厂模式（静态工厂)和多工厂
+
+###第九">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -84,7 +99,7 @@
   };
 </script>
 
-  <title> 单一职责原则和里氏替换原则 | JY-Blog </title>
+  <title> 设计模式 | JY-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -334,7 +349,7 @@
           
           
             
-              单一职责原则和里氏替换原则
+              设计模式
             
           
         </h1>
@@ -343,8 +358,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-03-28T00:13:29+08:00" content="2017-03-28">
-            2017-03-28
+          <time itemprop="dateCreated" datetime="2017-04-02T20:43:51+08:00" content="2017-04-02">
+            2017-04-02
           </time>
         </span>
 
@@ -377,41 +392,84 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="单一职责原则和里氏替换原则"><a href="#单一职责原则和里氏替换原则" class="headerlink" title="单一职责原则和里氏替换原则"></a>单一职责原则和里氏替换原则</h1><p>标签（空格分隔）： 设计模式</p>
+        <span itemprop="articleBody"><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>标签（空格分隔）： 设计模式</p>
 <hr>
-<h2 id="单一职责原则（Single-Responsibility-Principle-简称SRP）"><a href="#单一职责原则（Single-Responsibility-Principle-简称SRP）" class="headerlink" title="单一职责原则（Single Responsibility Principle,简称SRP）"></a>单一职责原则（Single Responsibility Principle,简称SRP）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>应该有且仅有一个原因引起类的变更。</strong></p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>类的复杂性降低，实现什么职责都有清晰明确的定义</li>
-<li>可读性提高，复杂性降低</li>
-<li>变更引起的风险降低</li>
+<p>###第七章：单例模式</p>
+<ul>
+<li>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例</li>
+<li>饿汉式（优秀）和懒汉式（不安全）</li>
+<li>spring每个Bean就是单例</li>
 </ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性。本来一个类可以实现的行为硬要拆成两个类，然后再使用聚合或组合的方式耦合在一起，人为制造了系统的复杂性。所以规则是死的，人是活的，这句活很有道理。</li>
+<p>###第八章：工厂方法模式</p>
+<ul>
+<li>定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。</li>
+<li>工厂模式是典型的解耦框架。</li>
+<li>简单工厂模式（静态工厂)和多工厂</li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>单一职责原则提出了一个编写程序的标准，用“职责”或“变化原因”来衡量接口或类设计得是否优良，但是“职责”和“变化原因”都是不可度量的，因项目而异，因环境而异。</li>
-<li>对于单一职责原则，我的建议是接口一定要做到单一职责，类的设计尽量做到只有一个原因引起变化。</li>
+<p>###第九章：抽象工厂模式</p>
+<ul>
+<li>为创建一组相关或相互依赖的对象提供一个接口，而且无须指定他们的具体类。</li>
+<li>最大的缺点是产品族扩展非常困难。抽象类工厂增加一个方法，其实现类都要修改，违背开闭原则。</li>
 </ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
-<li>职责分明的电话类</li>
+<p>###第十章：模板方法模式</p>
+<ul>
+<li>定义一个操作中的算法 框架，而将一些步骤延迟到子类中。使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</li>
+<li>把认为是不变部分的算法封装到父类实现，而可变部分的可以通过继承来继续扩展。</li>
+<li>钩子方法，子类影响父类结果</li>
 </ul>
-<h2 id="里氏替换原则（Liskov-Substitution-Principle-LSP）"><a href="#里氏替换原则（Liskov-Substitution-Principle-LSP）" class="headerlink" title="里氏替换原则（Liskov Substitution Principle, LSP）"></a>里氏替换原则（Liskov Substitution Principle, LSP）</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或异常，使用者可能根本就不需要知道是父类还是子类。但是，反过来就不行了，有子类出现的地方，父类未必就能适应。</strong><br><strong>通俗的讲，子类可以扩展父类的功能，但不能改变父类原有的功能</strong></p>
-<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>代码共享，减少创建类的工作量，每个子类都拥有父类的方法和属性；</li>
-<li>提高代码的重用性；</li>
-<li>子类可以形似父类，但又异于父类，“龙生龙，凤生凤，老师生来会打洞”是说。“世界上没有两片完全相同的叶子”是指子与父的不同；</li>
-<li>提高代码的可扩展性</li>
-<li>提高产品或项目的开放性</li>
+<p>###第十一章：建造者模式</p>
+<ul>
+<li>将一个复制对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</li>
+<li>相同的方法，不同的执行顺序，产生不同的事件结果时，可以采用建造者模式</li>
+<li>model、builder创建类、director导演</li>
 </ul>
-<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>继承是侵入性的。只要继承，就必须拥有父类的所有属性和方法；</li>
-<li>降低代码的灵活性。子类必须拥有父类的属性和方法，让子类自由的世界中多了些约束；</li>
-<li>增强了耦合性。当父类的常量、变量和方法被修改时，需要考虑子类的修改，而且在缺乏规范的环境下，这种修改可能带来非常糟糕的结果——大段的代码需要重构。</li>
+<p>###第十二章：代理模式</p>
+<ul>
+<li>为其他对象提供一种代理以控制对这个对象的访问。</li>
+<li>Subject、RealSubject、Proxy</li>
+<li>普通代理、强制代理（获取代理类）</li>
+<li>动态代理：实现阶段不用关心代理谁，而在运行阶段才指定代理哪一个对象。（AOP）</li>
+<li>动态代理：jdk动态代理（局限性：目标类基于统一接口）、cglib（更有效率）</li>
 </ul>
-<h3 id="重点内容"><a href="#重点内容" class="headerlink" title="重点内容"></a>重点内容</h3><p>里氏替换原则为良好的继承定义了一个规范，一句简单的定义包含了4层含义。<br>1.子类必须完全实现父类的方法<br>2.子类可以有自己的个性<br>3.覆盖或实现父类的方法时输入参数可以被放大<br>4.覆写或实现父类的方法时输出结果可以被缩小</p>
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>在项目中，采用里氏替换原则时，尽量避免子类的“个性”，一旦子类有“个性”，这个子类和父类之间的关系就很难调和了，把子类当做父类使用，子类的“个性”被抹杀——委屈了点；把子类单独作为一个业务来使用，则会让代码间的耦合关系变得扑朔迷离——缺乏类替换的标准。<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3></li>
-<li>模拟士兵枪支创建</li>
+<p>###第十三章：原型模式</p>
+<ul>
+<li>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</li>
+<li>clone方法：构造函数不会被执行。</li>
+<li>浅拷贝和深拷贝</li>
+</ul>
+<p>###第十四章：中介者模式</p>
+<ul>
+<li>用一个中介对象封装一系列的对象交互，中介者使各对象不需要显示地相互作用，从而使其耦合松散，而且可以独立地改变他们之间的交互。</li>
+<li>抽象中介者、具体中介者、同事角色</li>
+<li>类与类之间引用出现蜘蛛式结构时，可思考选择使用中介者模式</li>
+</ul>
+<p>###第十五章：命令模式</p>
+<ul>
+<li>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对QQ排队或者记录请求日志，可以提供命令的撤销和恢复功能。</li>
+<li>Receive接收者角色、Command命令角色、Invoker调用者角色</li>
+<li>Receive、Command可多个，搞层次的模块不需要知道接收者</li>
+</ul>
+<p>###第十六章：责任链模式</p>
+<ul>
+<li>使多个对象都有机会处理请求，从而避免了请求的发送者和接收者之间的耦合关系。将这些对象炼成一条链，并沿着这条链传递该请求，直到有对象处理它为止。</li>
+<li>性能问题堪忧，每个请求都是从链头遍历到链尾</li>
+<li>基本用法：抽象Handler类：<br>（1）请求的处理方法（唯一对外开放）<br>（2）链的编排方法setNext<br>（3）定义了具体请求者必须实现的两个方法：定义自己能够处理的级别getHandlerLevel和具体的处理任务ech</li>
+</ul>
+<p>###第十七章：装饰模式</p>
+<ul>
+<li>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰模式相比生成子类更为灵活</li>
+<li>必然有一个最核心的接口或抽象类充当Component抽象构件</li>
+<li>具体构建ConcreteComponent、装饰角色Decorator、具体装饰角色</li>
+<li>多层的装饰是比较复杂的，应尽量减少装饰类的数量，以便降低系统的复炸都</li>
+</ul>
+<p>###第十八章：策略模式</p>
+<ul>
+<li>定义一组算法，将每个算法都封装起来，并且使他们之间可以互换</li>
+<li>Context封装角色，Strategy抽象策略角色，ConcreteStrategy具体策略角色</li>
+<li>与代理模式的区别：策略模式的封装角色和被封装的策略类不用是同一个接口，如果是同一个接口那就成为了代理模式。</li>
+<li>避免多重条件判断</li>
+<li>可配工厂方法模式，代理模式或享元模式</li>
+<li>策略枚举</li>
 </ul>
 </span>
       
@@ -423,8 +481,6 @@
           
             <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
-            <a href="/tags/六大原则/" rel="tag">#六大原则</a>
-          
         </div>
       
 
@@ -432,13 +488,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/28/迪米特法则和开闭原则/" rel="prev">迪米特法则和开闭原则</a>
+              <a href="/2017/04/08/spring/ThreadLocal基础知识/" rel="prev">ThreadLocal基础知识</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/28/依赖倒置原则和接口隔离原则/" rel="next">依赖倒置原则和接口隔离原则</a>
+              <a href="/2017/03/28/迪米特法则和开闭原则/" rel="next">迪米特法则和开闭原则</a>
             
           </div>
         </div>
@@ -688,7 +744,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单一职责原则和里氏替换原则"><span class="nav-number">1.</span> <span class="nav-text">单一职责原则和里氏替换原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责原则（Single-Responsibility-Principle-简称SRP）"><span class="nav-number">1.1.</span> <span class="nav-text">单一职责原则（Single Responsibility Principle,简称SRP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">1.1.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.5.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#里氏替换原则（Liskov-Substitution-Principle-LSP）"><span class="nav-number">1.2.</span> <span class="nav-text">里氏替换原则（Liskov Substitution Principle, LSP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点内容"><span class="nav-number">1.2.4.</span> <span class="nav-text">重点内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

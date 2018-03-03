@@ -29,7 +29,7 @@
 
 
 
-  <meta name="keywords" content="设计模式,六大原则," />
+  <meta name="keywords" content="redis," />
 
 
 
@@ -38,43 +38,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta name="description" content="Redis缓存同步标签（空格分隔）： Redis
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
-
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
+#1.缓存的使用方式读数据：先读取缓存，若不存在则从DB中读取，并将结果写入到缓存中；下次数据读取时便可以直接从缓存中获取数据。改数据：直接失效缓存数据，再修改DB内容（避免突发情况：避免DB修改成功，但由于网络或者其他问题导致缓存数据没有清理，造成了脏数据）
+deleteAndIncVersion接口：此接口并不会真的删除数据，而是给数据打了标">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单一职责原则和里氏替换原则">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/03/28/单一职责原则和里氏替换原则/index.html">
+<meta property="og:title" content="Redis缓存同步">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/05/08/redis/Redis缓存同步/index.html">
 <meta property="og:site_name" content="JY-Blog">
-<meta property="og:description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta property="og:description" content="Redis缓存同步标签（空格分隔）： Redis
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
-
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
-<meta property="og:updated_time" content="2017-03-27T17:05:47.648Z">
+#1.缓存的使用方式读数据：先读取缓存，若不存在则从DB中读取，并将结果写入到缓存中；下次数据读取时便可以直接从缓存中获取数据。改数据：直接失效缓存数据，再修改DB内容（避免突发情况：避免DB修改成功，但由于网络或者其他问题导致缓存数据没有清理，造成了脏数据）
+deleteAndIncVersion接口：此接口并不会真的删除数据，而是给数据打了标">
+<meta property="og:updated_time" content="2018-03-03T10:13:43.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单一职责原则和里氏替换原则">
-<meta name="twitter:description" content="单一职责原则和里氏替换原则标签（空格分隔）： 设计模式
+<meta name="twitter:title" content="Redis缓存同步">
+<meta name="twitter:description" content="Redis缓存同步标签（空格分隔）： Redis
 
-单一职责原则（Single Responsibility Principle,简称SRP）定义应该有且仅有一个原因引起类的变更。
-优点
-类的复杂性降低，实现什么职责都有清晰明确的定义
-可读性提高，复杂性降低
-变更引起的风险降低
-
-缺点
-生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性">
+#1.缓存的使用方式读数据：先读取缓存，若不存在则从DB中读取，并将结果写入到缓存中；下次数据读取时便可以直接从缓存中获取数据。改数据：直接失效缓存数据，再修改DB内容（避免突发情况：避免DB修改成功，但由于网络或者其他问题导致缓存数据没有清理，造成了脏数据）
+deleteAndIncVersion接口：此接口并不会真的删除数据，而是给数据打了标">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -84,7 +66,7 @@
   };
 </script>
 
-  <title> 单一职责原则和里氏替换原则 | JY-Blog </title>
+  <title> Redis缓存同步 | JY-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -334,7 +316,7 @@
           
           
             
-              单一职责原则和里氏替换原则
+              Redis缓存同步
             
           
         </h1>
@@ -343,8 +325,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-03-28T00:13:29+08:00" content="2017-03-28">
-            2017-03-28
+          <time itemprop="dateCreated" datetime="2017-05-08T09:26:25+08:00" content="2017-05-08">
+            2017-05-08
           </time>
         </span>
 
@@ -353,8 +335,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/设计模式/" itemprop="url" rel="index">
-                  <span itemprop="name">设计模式</span>
+                <a href="/categories/redis/" itemprop="url" rel="index">
+                  <span itemprop="name">redis</span>
                 </a>
               </span>
 
@@ -377,42 +359,21 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="单一职责原则和里氏替换原则"><a href="#单一职责原则和里氏替换原则" class="headerlink" title="单一职责原则和里氏替换原则"></a>单一职责原则和里氏替换原则</h1><p>标签（空格分隔）： 设计模式</p>
+        <span itemprop="articleBody"><h1 id="Redis缓存同步"><a href="#Redis缓存同步" class="headerlink" title="Redis缓存同步"></a>Redis缓存同步</h1><p>标签（空格分隔）： Redis</p>
 <hr>
-<h2 id="单一职责原则（Single-Responsibility-Principle-简称SRP）"><a href="#单一职责原则（Single-Responsibility-Principle-简称SRP）" class="headerlink" title="单一职责原则（Single Responsibility Principle,简称SRP）"></a>单一职责原则（Single Responsibility Principle,简称SRP）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>应该有且仅有一个原因引起类的变更。</strong></p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>类的复杂性降低，实现什么职责都有清晰明确的定义</li>
-<li>可读性提高，复杂性降低</li>
-<li>变更引起的风险降低</li>
-</ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>生搬硬套单一职责原则会引起类的剧增，给维护带来非常多的麻烦，而且过分细分类的职责也会人为地增加系统的复杂性。本来一个类可以实现的行为硬要拆成两个类，然后再使用聚合或组合的方式耦合在一起，人为制造了系统的复杂性。所以规则是死的，人是活的，这句活很有道理。</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>单一职责原则提出了一个编写程序的标准，用“职责”或“变化原因”来衡量接口或类设计得是否优良，但是“职责”和“变化原因”都是不可度量的，因项目而异，因环境而异。</li>
-<li>对于单一职责原则，我的建议是接口一定要做到单一职责，类的设计尽量做到只有一个原因引起变化。</li>
-</ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
-<li>职责分明的电话类</li>
-</ul>
-<h2 id="里氏替换原则（Liskov-Substitution-Principle-LSP）"><a href="#里氏替换原则（Liskov-Substitution-Principle-LSP）" class="headerlink" title="里氏替换原则（Liskov Substitution Principle, LSP）"></a>里氏替换原则（Liskov Substitution Principle, LSP）</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或异常，使用者可能根本就不需要知道是父类还是子类。但是，反过来就不行了，有子类出现的地方，父类未必就能适应。</strong><br><strong>通俗的讲，子类可以扩展父类的功能，但不能改变父类原有的功能</strong></p>
-<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>代码共享，减少创建类的工作量，每个子类都拥有父类的方法和属性；</li>
-<li>提高代码的重用性；</li>
-<li>子类可以形似父类，但又异于父类，“龙生龙，凤生凤，老师生来会打洞”是说。“世界上没有两片完全相同的叶子”是指子与父的不同；</li>
-<li>提高代码的可扩展性</li>
-<li>提高产品或项目的开放性</li>
-</ul>
-<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>继承是侵入性的。只要继承，就必须拥有父类的所有属性和方法；</li>
-<li>降低代码的灵活性。子类必须拥有父类的属性和方法，让子类自由的世界中多了些约束；</li>
-<li>增强了耦合性。当父类的常量、变量和方法被修改时，需要考虑子类的修改，而且在缺乏规范的环境下，这种修改可能带来非常糟糕的结果——大段的代码需要重构。</li>
-</ul>
-<h3 id="重点内容"><a href="#重点内容" class="headerlink" title="重点内容"></a>重点内容</h3><p>里氏替换原则为良好的继承定义了一个规范，一句简单的定义包含了4层含义。<br>1.子类必须完全实现父类的方法<br>2.子类可以有自己的个性<br>3.覆盖或实现父类的方法时输入参数可以被放大<br>4.覆写或实现父类的方法时输出结果可以被缩小</p>
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>在项目中，采用里氏替换原则时，尽量避免子类的“个性”，一旦子类有“个性”，这个子类和父类之间的关系就很难调和了，把子类当做父类使用，子类的“个性”被抹杀——委屈了点；把子类单独作为一个业务来使用，则会让代码间的耦合关系变得扑朔迷离——缺乏类替换的标准。<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3></li>
-<li>模拟士兵枪支创建</li>
-</ul>
+<p>#1.缓存的使用方式<br>读数据：先读取缓存，若不存在则从DB中读取，并将结果写入到缓存中；下次数据读取时便可以直接从缓存中获取数据。<br>改数据：直接失效缓存数据，再修改DB内容（避免突发情况：避免DB修改成功，但由于网络或者其他问题导致缓存数据没有清理，造成了脏数据）</p>
+<p>deleteAndIncVersion接口：此接口并不会真的删除数据，而是给数据打了标签，表明已失效状态，并且增加数据版本号；如果数据不存在则写入NULL，同时也生成随机数据版本号。OCS写入支持原子对比版本号：假设传入的版本号与OCS保存的数据版本号一致或者原数据不存在，则准许写入，否则拒绝修改。</p>
+<p>#2.缓存与数据库的一致性<br>方案：MySQL作为主库（写），Redis作为高速数据查询（读）从库的异构读写分离。</p>
+<p>解决：专门开发了自己的MySQL复制工具，可以方便的实时同步MySQL中的数据到Redis上。</p>
+<pre><code>如果你可以接受定期从redis导入到mysql，那基本上表示你的业务就不需要mysql。
+至于缓存，一般都是读缓存（写缓存实现起来很罗嗦，而且也不那么靠谱），与数据库的同步策略需要添加到自己的代码逻辑里。
+</code></pre><p>结论：写操作不缓存。失效缓存数据，再修改DB内容。</p>
+<p>其他想法：<br>        首先更新到 Mysql，然后再根据Mysql的更新内容去更新 其他数据库例如redis。有一个问题很明显，就是高并发下写入Mysql是个可怕的事情，所以我之前想到的是直接更新redis然后异步更新Mysql，最后将redis作为缓冲层。<br>结论：高并发写的情况必须单独特殊处理（直接内存操作，慢回写数据库）。比如第4节：追求响应速度的情况。</p>
+<p>#3.多IDC的情况下的缓存一致性<br>不一致的根本原因是异构系统之间无法协同同步，不能保证DB数据先同步，缓存数据后同步。</p>
+<p>所以就要考虑缓存系统如何等待DB同步，或者能否做到两者共用一套同步机制？缓存同步也依赖DB BINLOG是一个可行的方案。</p>
+<p>#4.追求响应速度的情况<br>如果用关系数据库，大量读写会导致索引无效，读写效率都会比较低下。可以考虑仅仅把那种一旦丢失就影响很大如当前等级、帐号和密码之类的才持久化保存到关系数据库中。</p>
+<p>其他的实时数据，可以考虑使用各种NOSQL方案来达成更高的性能，或者干脆自己的前端程序在内存中折腾，10分钟才回写给数据库行不行呢。</p>
+<p>假如非得用关系数据库不可，建议采用内存数据库。<br>        如果没有内存数据库可用，可以考虑加大机器内存，反正现在内存也便宜，把各种缓存啊SharedBuffer之类的都开得尽可能的大。 还可以考虑上固态硬盘，提高磁盘I/O速度。<br>        再者，就是考虑看能否把数据分离到不同的各个节点，尽量减少单点处理压力。</p>
 </span>
       
     </div>
@@ -421,9 +382,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
-          
-            <a href="/tags/六大原则/" rel="tag">#六大原则</a>
+            <a href="/tags/redis/" rel="tag">#redis</a>
           
         </div>
       
@@ -432,13 +391,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/08/spring/ThreadLocal基础知识/" rel="prev">ThreadLocal基础知识</a>
+              <a href="/2017/07/14/Quartz/慕课-Quartz/" rel="prev">慕课-Quartz</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/28/依赖倒置原则和接口隔离原则/" rel="next">依赖倒置原则和接口隔离原则</a>
+              <a href="/2017/05/04/nginx/Apache与Nginx、Tomcat区别/" rel="next">Apache与Nginx、Tomcat区别</a>
             
           </div>
         </div>
@@ -688,7 +647,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单一职责原则和里氏替换原则"><span class="nav-number">1.</span> <span class="nav-text">单一职责原则和里氏替换原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责原则（Single-Responsibility-Principle-简称SRP）"><span class="nav-number">1.1.</span> <span class="nav-text">单一职责原则（Single Responsibility Principle,简称SRP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">1.1.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.1.5.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#里氏替换原则（Liskov-Substitution-Principle-LSP）"><span class="nav-number">1.2.</span> <span class="nav-text">里氏替换原则（Liskov Substitution Principle, LSP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点内容"><span class="nav-number">1.2.4.</span> <span class="nav-text">重点内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis缓存同步"><span class="nav-number">1.</span> <span class="nav-text">Redis缓存同步</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

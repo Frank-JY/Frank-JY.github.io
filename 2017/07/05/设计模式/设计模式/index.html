@@ -40,6 +40,7 @@
 
 <meta name="description" content="设计模式标签（空格分隔）： 设计模式
 
+[toc]
 ###第七章：单例模式
 
 确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
@@ -50,15 +51,14 @@ spring每个Bean就是单例
 
 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
 工厂模式是典型的解耦框架。
-简单工厂模式（静态工厂)和多工厂
-
-###第九">
+简单工厂模式（静态工厂)和多工厂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/04/02/设计模式/设计模式/index.html">
+<meta property="og:url" content="http://Frank-JY.github.io/2017/07/05/设计模式/设计模式/index.html">
 <meta property="og:site_name" content="JY-Blog">
 <meta property="og:description" content="设计模式标签（空格分隔）： 设计模式
 
+[toc]
 ###第七章：单例模式
 
 确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
@@ -69,14 +69,14 @@ spring每个Bean就是单例
 
 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
 工厂模式是典型的解耦框架。
-简单工厂模式（静态工厂)和多工厂
-
-###第九">
-<meta property="og:updated_time" content="2018-03-03T10:21:39.974Z">
+简单工厂模式（静态工厂)和多工厂">
+<meta property="og:image" content="https://i.loli.net/2018/03/04/5a9b83b066545.gif">
+<meta property="og:updated_time" content="2018-03-06T12:01:45.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式">
 <meta name="twitter:description" content="设计模式标签（空格分隔）： 设计模式
 
+[toc]
 ###第七章：单例模式
 
 确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例
@@ -87,9 +87,8 @@ spring每个Bean就是单例
 
 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
 工厂模式是典型的解耦框架。
-简单工厂模式（静态工厂)和多工厂
-
-###第九">
+简单工厂模式（静态工厂)和多工厂">
+<meta name="twitter:image" content="https://i.loli.net/2018/03/04/5a9b83b066545.gif">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -127,7 +126,7 @@ spring每个Bean就是单例
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">博客</span>
+      <span class="site-title">JY-博客</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -358,8 +357,8 @@ spring每个Bean就是单例
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-04-02T20:43:51+08:00" content="2017-04-02">
-            2017-04-02
+          <time itemprop="dateCreated" datetime="2017-07-05T20:43:51+08:00" content="2017-07-05">
+            2017-07-05
           </time>
         </span>
 
@@ -394,6 +393,7 @@ spring每个Bean就是单例
       
         <span itemprop="articleBody"><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>标签（空格分隔）： 设计模式</p>
 <hr>
+<p>[toc]</p>
 <p>###第七章：单例模式</p>
 <ul>
 <li>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例</li>
@@ -471,6 +471,30 @@ spring每个Bean就是单例
 <li>可配工厂方法模式，代理模式或享元模式</li>
 <li>策略枚举</li>
 </ul>
+<p>###第二十二章：观察者模式</p>
+<ul>
+<li>也叫做发布订阅模式</li>
+<li>定义对象间一种一对多的依赖关系，使得每当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新</li>
+<li>Subject被观察者、Observer观察者</li>
+<li>ConcreteSubject具体的被观察者、concreteObserver具体的观察者</li>
+<li>观察者和被观察者之间是抽象耦合，容易扩展</li>
+<li>建立了一套触发机制</li>
+<li>缺点：效率问题，因为顺序执行，一个观察者卡壳就会影响全体（使用异步）</li>
+<li>注意事项：广播链问题（相互触发、多次转发）导致逻辑复制</li>
+</ul>
+<p>###生产者/消费者模式</p>
+<ul>
+<li>产生数据的模块，就形象地称为生产者；而处理数据的模块，就称为消费者</li>
+<li>在生产者与消费者之间在加个缓冲区，我们形象的称之为仓库<img src="https://i.loli.net/2018/03/04/5a9b83b066545.gif" alt="820543-20170423210913038-737394213"></li>
+<li>优点：<ul>
+<li>解耦</li>
+<li>支持并发</li>
+<li>支持忙闲不均</li>
+</ul>
+</li>
+<li>此模型将要结合java.lang.Object的wait与notify、notifyAll方法来实现以上的需求</li>
+<li>使用堵塞队列（linkedBlockQueue）</li>
+</ul>
 </span>
       
     </div>
@@ -488,13 +512,13 @@ spring每个Bean就是单例
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/08/spring/ThreadLocal基础知识/" rel="prev">ThreadLocal基础知识</a>
+              <a href="/2017/09/15/Quartz/慕课-Quartz/" rel="prev">Quartz</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/28/迪米特法则和开闭原则/" rel="next">迪米特法则和开闭原则</a>
+              <a href="/2017/05/08/redis/Redis缓存同步/" rel="next">Redis缓存同步</a>
             
           </div>
         </div>
@@ -702,7 +726,7 @@ spring每个Bean就是单例
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -716,7 +740,7 @@ spring每个Bean就是单例
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -29,7 +29,7 @@
 
 
 
-  <meta name="keywords" content="Quartz," />
+  <meta name="keywords" content="aop," />
 
 
 
@@ -38,46 +38,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="慕课-Quartz标签（空格分隔）： quartz
-
-三要素
-Trigger 触发器
-Scheduler 调度器
-job       任务
-
-一、job&amp;amp;jobDetailjob定义：
-实现业务逻辑的任务接口（job接口只有一个execute方法）job生命周期：
-每次调度器执行job时，它在调用execute方法前会创建一个新的job实例。
-当调用完成后，关联的job对象实例会被释放，释">
+<meta name="description" content="aop基础
+[toc]
+一、AOP核心概念1、横切关注点
+对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点
+2、切面（aspect）
+类是对物体特征的抽象，切面就是对横切关注点的抽象
+3、连接点（joinpoint）
+被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器
+4、切入点（pointcut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慕课-Quartz">
-<meta property="og:url" content="http://Frank-JY.github.io/2017/07/14/Quartz/慕课-Quartz/index.html">
+<meta property="og:title" content="aop基础">
+<meta property="og:url" content="http://Frank-JY.github.io/2018/01/23/java框架/aop基础/index.html">
 <meta property="og:site_name" content="JY-Blog">
-<meta property="og:description" content="慕课-Quartz标签（空格分隔）： quartz
-
-三要素
-Trigger 触发器
-Scheduler 调度器
-job       任务
-
-一、job&amp;amp;jobDetailjob定义：
-实现业务逻辑的任务接口（job接口只有一个execute方法）job生命周期：
-每次调度器执行job时，它在调用execute方法前会创建一个新的job实例。
-当调用完成后，关联的job对象实例会被释放，释">
-<meta property="og:updated_time" content="2018-03-03T10:16:07.951Z">
+<meta property="og:description" content="aop基础
+[toc]
+一、AOP核心概念1、横切关注点
+对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点
+2、切面（aspect）
+类是对物体特征的抽象，切面就是对横切关注点的抽象
+3、连接点（joinpoint）
+被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器
+4、切入点（pointcut">
+<meta property="og:updated_time" content="2018-03-06T11:59:06.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="慕课-Quartz">
-<meta name="twitter:description" content="慕课-Quartz标签（空格分隔）： quartz
-
-三要素
-Trigger 触发器
-Scheduler 调度器
-job       任务
-
-一、job&amp;amp;jobDetailjob定义：
-实现业务逻辑的任务接口（job接口只有一个execute方法）job生命周期：
-每次调度器执行job时，它在调用execute方法前会创建一个新的job实例。
-当调用完成后，关联的job对象实例会被释放，释">
+<meta name="twitter:title" content="aop基础">
+<meta name="twitter:description" content="aop基础
+[toc]
+一、AOP核心概念1、横切关注点
+对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点
+2、切面（aspect）
+类是对物体特征的抽象，切面就是对横切关注点的抽象
+3、连接点（joinpoint）
+被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器
+4、切入点（pointcut">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -87,7 +81,7 @@ job       任务
   };
 </script>
 
-  <title> 慕课-Quartz | JY-Blog </title>
+  <title> aop基础 | JY-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -115,7 +109,7 @@ job       任务
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">博客</span>
+      <span class="site-title">JY-博客</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -337,7 +331,7 @@ job       任务
           
           
             
-              慕课-Quartz
+              aop基础
             
           
         </h1>
@@ -346,8 +340,8 @@ job       任务
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-07-14T15:23:16+08:00" content="2017-07-14">
-            2017-07-14
+          <time itemprop="dateCreated" datetime="2018-01-23T15:15:22+08:00" content="2018-01-23">
+            2018-01-23
           </time>
         </span>
 
@@ -356,8 +350,8 @@ job       任务
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Quartz/" itemprop="url" rel="index">
-                  <span itemprop="name">Quartz</span>
+                <a href="/categories/spring/" itemprop="url" rel="index">
+                  <span itemprop="name">spring</span>
                 </a>
               </span>
 
@@ -380,39 +374,30 @@ job       任务
       
 
       
-        <span itemprop="articleBody"><h1 id="慕课-Quartz"><a href="#慕课-Quartz" class="headerlink" title="慕课-Quartz"></a>慕课-Quartz</h1><p>标签（空格分隔）： quartz</p>
-<hr>
-<h2 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h2><ul>
-<li>Trigger 触发器</li>
-<li>Scheduler 调度器</li>
-<li>job       任务</li>
+        <span itemprop="articleBody"><h1 id="aop基础"><a href="#aop基础" class="headerlink" title="aop基础"></a>aop基础</h1><hr>
+<p>[toc]</p>
+<h2 id="一、AOP核心概念"><a href="#一、AOP核心概念" class="headerlink" title="一、AOP核心概念"></a>一、AOP核心概念</h2><p>1、横切关注点</p>
+<p>对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点</p>
+<p>2、切面（aspect）</p>
+<p>类是对物体特征的抽象，切面就是对横切关注点的抽象</p>
+<p>3、连接点（joinpoint）</p>
+<p>被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器</p>
+<p>4、切入点（pointcut）</p>
+<p>对连接点进行拦截的定义</p>
+<p>5、通知（advice）</p>
+<p>所谓通知指的就是指拦截到连接点之后要执行的代码，通知分为前置、后置、异常、最终、环绕通知五类</p>
+<p>6、目标对象</p>
+<p>代理的目标对象</p>
+<p>7、织入（weave）</p>
+<p>将切面应用到目标对象并导致代理对象创建的过程</p>
+<p>8、引入（introduction）</p>
+<p>在不修改代码的前提下，引入可以在运行期为类动态地添加一些方法或字段</p>
+<h2 id="二、Spring对AOP的支持"><a href="#二、Spring对AOP的支持" class="headerlink" title="二、Spring对AOP的支持"></a>二、Spring对AOP的支持</h2><p>Spring中AOP代理由Spring的IOC容器负责生成、管理，其依赖关系也由IOC容器负责管理</p>
+<ul>
+<li>默认使用Java动态代理来创建AOP代理，这样就可以为任何接口实例创建代理</li>
+<li>当需要代理的类不是代理接口的时候，Spring会切换为使用CGLIB代理，也可强制使用CGLIB</li>
 </ul>
-<h2 id="一、job-amp-jobDetail"><a href="#一、job-amp-jobDetail" class="headerlink" title="一、job&amp;jobDetail"></a>一、job&amp;jobDetail</h2><h3 id="job定义："><a href="#job定义：" class="headerlink" title="job定义："></a>job定义：</h3><ul>
-<li>实现业务逻辑的任务接口（job接口只有一个execute方法）<h3 id="job生命周期："><a href="#job生命周期：" class="headerlink" title="job生命周期："></a>job生命周期：</h3></li>
-<li>每次调度器执行job时，它在调用execute方法前会创建一个新的job实例。</li>
-<li>当调用完成后，关联的job对象实例会被释放，释放的实例会被cg垃圾回收机制回收。<h3 id="jobDetail"><a href="#jobDetail" class="headerlink" title="jobDetail:"></a>jobDetail:</h3></li>
-<li>jobDetail为job实例提供了许多设置属性，以及jobDataMap成员变量属性，用来存储特定job实例的状态信息，调度器需要借助jobDetail对象来添加job实例。（name,group,class,JobDataMap)<h3 id="JobExecutionContext"><a href="#JobExecutionContext" class="headerlink" title="JobExecutionContext"></a>JobExecutionContext</h3></li>
-<li>当Scheduler调用一个job，就会将JobExecutinContext传递给Job的execute(方法)</li>
-<li>job能通过JobExecutionContext对象访问到Quartz运行时候的环境以及Job本身的明细数据。<h3 id="JobDataMap"><a href="#JobDataMap" class="headerlink" title="JobDataMap"></a>JobDataMap</h3></li>
-<li>在进行任务调度JobDataMap存储在JobExecutionContext中，非常方便获取</li>
-<li>JobDataMap可以用来装载任何可序列化的数据对象，当Job实例对象被执行时这些参数对象会传递给它</li>
-<li>JobDataMap实习的jdk中的Map接口，并且添加了一些非常方便的方法用来存储基本数据类型</li>
-</ul>
-<h2 id="二、Trigger"><a href="#二、Trigger" class="headerlink" title="二、Trigger"></a>二、Trigger</h2><h3 id="Trigger是什么"><a href="#Trigger是什么" class="headerlink" title="Trigger是什么"></a>Trigger是什么</h3><ul>
-<li>Quartz中的触发器用来告诉调度程序作业什么时候触发</li>
-<li>即Trigger对象是用来触发执行Job的<h3 id="JobKey"><a href="#JobKey" class="headerlink" title="JobKey"></a>JobKey</h3></li>
-<li>表示job实例的标识，触发器被触发时，该指定的job实例会执行<h3 id="startTime"><a href="#startTime" class="headerlink" title="startTime"></a>startTime</h3></li>
-<li>标识触发器的时间表首次被触发的时间</li>
-<li>它的值的类型是java.util.Date<h3 id="EndTime"><a href="#EndTime" class="headerlink" title="EndTime"></a>EndTime</h3></li>
-<li>指定触发器的不再触发时间</li>
-<li>它的值的类型是java.util.Date</li>
-</ul>
-<h2 id="三、Scheduler"><a href="#三、Scheduler" class="headerlink" title="三、Scheduler"></a>三、Scheduler</h2><h3 id="StdSchedulerFactory"><a href="#StdSchedulerFactory" class="headerlink" title="StdSchedulerFactory"></a>StdSchedulerFactory</h3><ul>
-<li>使用一组参数（java.util.properties)来创建和初始化Quartz调度器</li>
-<li>配置参数一般存储在quartz.properties中</li>
-<li>调用getScheduler方法就能创建和初始化调度器对象</li>
-</ul>
-<h2 id="四、quartz-properties配置"><a href="#四、quartz-properties配置" class="headerlink" title="四、quartz.properties配置"></a>四、quartz.properties配置</h2></span>
+</span>
       
     </div>
 
@@ -420,7 +405,7 @@ job       任务
       
         <div class="post-tags">
           
-            <a href="/tags/Quartz/" rel="tag">#Quartz</a>
+            <a href="/tags/aop/" rel="tag">#aop</a>
           
         </div>
       
@@ -429,13 +414,11 @@ job       任务
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/02/数据库/数据库事务基础知识/" rel="prev">数据库事务基础知识</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/08/redis/Redis缓存同步/" rel="next">Redis缓存同步</a>
+              <a href="/2018/01/22/java框架/ioc基础/" rel="next">ioc源码</a>
             
           </div>
         </div>
@@ -643,7 +626,7 @@ job       任务
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -657,7 +640,7 @@ job       任务
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -685,7 +668,7 @@ job       任务
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#慕课-Quartz"><span class="nav-number">1.</span> <span class="nav-text">慕课-Quartz</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三要素"><span class="nav-number">1.1.</span> <span class="nav-text">三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、job-amp-jobDetail"><span class="nav-number">1.2.</span> <span class="nav-text">一、job&jobDetail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#job定义："><span class="nav-number">1.2.1.</span> <span class="nav-text">job定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#job生命周期："><span class="nav-number">1.2.2.</span> <span class="nav-text">job生命周期：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobDetail"><span class="nav-number">1.2.3.</span> <span class="nav-text">jobDetail:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JobExecutionContext"><span class="nav-number">1.2.4.</span> <span class="nav-text">JobExecutionContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JobDataMap"><span class="nav-number">1.2.5.</span> <span class="nav-text">JobDataMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Trigger"><span class="nav-number">1.3.</span> <span class="nav-text">二、Trigger</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trigger是什么"><span class="nav-number">1.3.1.</span> <span class="nav-text">Trigger是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JobKey"><span class="nav-number">1.3.2.</span> <span class="nav-text">JobKey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#startTime"><span class="nav-number">1.3.3.</span> <span class="nav-text">startTime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EndTime"><span class="nav-number">1.3.4.</span> <span class="nav-text">EndTime</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Scheduler"><span class="nav-number">1.4.</span> <span class="nav-text">三、Scheduler</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StdSchedulerFactory"><span class="nav-number">1.4.1.</span> <span class="nav-text">StdSchedulerFactory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、quartz-properties配置"><span class="nav-number">1.5.</span> <span class="nav-text">四、quartz.properties配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#aop基础"><span class="nav-number">1.</span> <span class="nav-text">aop基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、AOP核心概念"><span class="nav-number">1.1.</span> <span class="nav-text">一、AOP核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Spring对AOP的支持"><span class="nav-number">1.2.</span> <span class="nav-text">二、Spring对AOP的支持</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
